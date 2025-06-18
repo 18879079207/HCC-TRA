@@ -1,0 +1,1216 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>肝癌局部治疗术后MRI结构式影像报告系统</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #005a00, #008000, #005a00);
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            padding: 25px 0;
+            margin-bottom: 25px;
+            color: white;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+            position: relative;
+        }
+        
+        header h1 {
+            font-size: 2.2rem;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+        }
+        
+        header h1 i {
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            width: 55px;
+            height: 55px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            box-shadow: 0 0 12px rgba(0,0,0,0.2);
+        }
+        
+        header p {
+            font-size: 1.05rem;
+            max-width: 800px;
+            margin: 8px auto 0;
+            opacity: 0.9;
+            background: rgba(0,0,0,0.15);
+            padding: 6px 14px;
+            border-radius: 50px;
+            backdrop-filter: blur(4px);
+            font-weight: 500;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+            padding: 22px;
+            margin-bottom: 22px;
+            transition: transform 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid #e0e0e0;
+        }
+        
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #005a00, #00b300, #005a00);
+        }
+        
+        .card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 28px rgba(0,0,0,0.18);
+        }
+        
+        .card-title {
+            display: flex;
+            align-items: center;
+            font-size: 1.3rem;
+            color: #005a00;
+            margin-bottom: 18px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #eaeaea;
+        }
+        
+        .card-title i {
+            margin-right: 12px;
+            background: #005a00;
+            color: white;
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 16px;
+            margin-bottom: 18px;
+        }
+        
+        .form-group {
+            margin-bottom: 16px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: 600;
+            color: #444;
+            font-size: 0.92rem;
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 9px 11px;
+            border: 2px solid #d1d1d1;
+            border-radius: 5px;
+            font-size: 14px;
+            transition: all 0.3s;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: #008000;
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(0, 128, 0, 0.1);
+        }
+        
+        .inline-group {
+            display: flex;
+            gap: 7px;
+            align-items: center;
+        }
+        
+        .inline-group .form-group {
+            flex: 1;
+            margin-bottom: 0;
+        }
+        
+        .checkbox-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 4px;
+        }
+        
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 0.9rem;
+        }
+        
+        .checkbox-item input {
+            width: auto;
+        }
+        
+        .btn {
+            padding: 9px 18px;
+            border: none;
+            border-radius: 5px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .btn i {
+            margin-right: 5px;
+        }
+        
+        .btn-primary {
+            background: #005a00;
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: #004000;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 90, 0, 0.25);
+        }
+        
+        .btn-print {
+            background: #ff8c00;
+            color: white;
+        }
+        
+        .btn-print:hover {
+            background: #e07d00;
+            transform: translateY(-2px);
+        }
+        
+        .btn-copy {
+            background: #1a6fd8;
+            color: white;
+        }
+        
+        .btn-copy:hover {
+            background: #0c5ebf;
+            transform: translateY(-2px);
+        }
+        
+        .btn-danger {
+            background: #d32f2f;
+            color: white;
+        }
+        
+        .btn-danger:hover {
+            background: #b22424;
+            transform: translateY(-2px);
+        }
+        
+        .actions {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 16px;
+        }
+        
+        .lesion-section {
+            position: relative;
+            padding: 18px;
+            border: 2px dashed #d1d1d1;
+            border-radius: 7px;
+            margin-bottom: 22px;
+            background: #f9fff9;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.04);
+        }
+        
+        .lesion-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+        
+        .lesion-title {
+            font-size: 1.15rem;
+            color: #005a00;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 7px;
+        }
+        
+        .lesion-title i {
+            color: #ff6b6b;
+        }
+        
+        .remove-lesion {
+            background: #ff6b6b;
+            color: white;
+            border: none;
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .remove-lesion:hover {
+            background: #ff5252;
+            transform: rotate(90deg);
+        }
+        
+        .lesion-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+        
+        .lesion-item {
+            padding: 15px;
+            border-radius: 8px;
+            background: #f0f8ff;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+        }
+        
+        .lesion-item-title {
+            font-size: 1rem;
+            color: #005a00;
+            margin-bottom: 10px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid #d1e0ee;
+            font-weight: 600;
+        }
+        
+        .impression-item {
+            background: #e8ffe8;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            border-left: 3px solid #008000;
+        }
+        
+        .impression-header {
+            font-weight: 600;
+            margin-bottom: 7px;
+            color: #005a00;
+            font-size: 1.0rem;
+        }
+        
+        footer {
+            text-align: center;
+            color: white;
+            padding: 12px 0;
+            margin-top: 22px;
+            font-size: 0.82rem;
+            opacity: 0.9;
+        }
+        
+        /* 打印报告区域 */
+        #report-container {
+            display: none;
+            background: white;
+            padding: 28px;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+            margin-top: 22px;
+            position: relative;
+            border: 1px solid #d0d0d0;
+        }
+        
+        .report-header {
+            text-align: center;
+            margin-bottom: 22px;
+            border-bottom: 2px solid #005a00;
+            padding-bottom: 12px;
+        }
+        
+        .report-header h2 {
+            color: #005a00;
+            font-size: 1.7rem;
+            margin-bottom: 4px;
+        }
+        
+        .report-section {
+            margin-bottom: 22px;
+            position: relative;
+            padding: 8px;
+        }
+        
+        .report-section h3 {
+            color: #005a00;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 5px;
+            margin-bottom: 10px;
+            font-size: 1.15rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .copy-btn {
+            padding: 4px 9px;
+            font-size: 0.78rem;
+            background: #1a6fd8;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-left: 5px;
+        }
+        
+        .lesion-report {
+            margin-bottom: 18px;
+            padding-bottom: 12px;
+            border-bottom: 1px dashed #ddd;
+        }
+        
+        .lesion-report:last-child {
+            border-bottom: none;
+        }
+        
+        .lesion-data {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 10px;
+            margin-bottom: 7px;
+        }
+        
+        .lesion-data-item {
+            margin-bottom: 5px;
+            font-size: 0.92rem;
+        }
+        
+        .lesion-data-item strong {
+            color: #005a00;
+            min-width: 130px;
+            display: inline-block;
+        }
+        
+        .impression-report {
+            background: #f9fff9;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 12px;
+            border-left: 3px solid #008000;
+            white-space: pre-wrap;
+            line-height: 1.7;
+            font-size: 0.95rem;
+        }
+        
+        .signature-area {
+            margin-top: 35px;
+            text-align: right;
+        }
+        
+        .signature-line {
+            display: inline-block;
+            width: 210px;
+            border-top: 1px solid #000;
+            margin-top: 50px;
+            text-align: center;
+            padding-top: 3px;
+            font-size: 0.9rem;
+        }
+        
+        .report-actions {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 22px;
+        }
+        
+        /* 日期选择器样式 */
+        .date-selector {
+            display: flex;
+            gap: 7px;
+        }
+        
+        .date-selector select {
+            flex: 1;
+            padding: 7px;
+            font-size: 0.9rem;
+        }
+        
+        .editable-textarea {
+            width: 100%;
+            min-height: 180px;
+            padding: 14px;
+            font-family: monospace;
+            line-height: 1.7;
+            border: 1px solid #d1d1d1;
+            border-radius: 7px;
+            resize: vertical;
+            font-size: 14px;
+        }
+        
+        .section-divider {
+            height: 1px;
+            background: #e0e0e0;
+            margin: 16px 0;
+        }
+        
+        .copy-section {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 10px;
+        }
+        
+        /* 打印优化 */
+        @media print {
+            body * {
+                visibility: hidden;
+                margin: 0;
+                padding: 0;
+            }
+            
+            body {
+                background: white;
+                font-size: 12pt;
+            }
+            
+            .container, #report-container, #report-container * {
+                visibility: visible;
+                max-width: 100%;
+                margin: 0;
+                padding: 0;
+                box-shadow: none;
+                border: none;
+                color: #000;
+            }
+            
+            #report-container {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                padding: 15px 25px;
+                box-shadow: none;
+                border: none;
+                page-break-after: avoid;
+                page-break-before: avoid;
+            }
+            
+            .report-actions, .copy-btn, .copy-section {
+                display: none;
+            }
+            
+            .report-header {
+                margin-bottom: 8px;
+                padding-bottom: 8px;
+            }
+            
+            .report-section {
+                margin-bottom: 12px;
+                page-break-inside: avoid;
+            }
+            
+            .lesion-data {
+                grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+                gap: 6px;
+            }
+            
+            .signature-area {
+                margin-top: 15px;
+            }
+            
+            .signature-line {
+                margin-top: 30px;
+                width: 180px;
+            }
+            
+            /* 隐藏页眉页脚 */
+            @page {
+                margin: 0.7cm;
+                size: A4;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .inline-group {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .lesion-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            header h1 {
+                font-size: 1.7rem;
+            }
+            
+            .actions {
+                flex-direction: column;
+            }
+            
+            .btn {
+                width: 100%;
+            }
+            
+            .date-selector {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-lungs"></i> 肝癌局部治疗术后MRI结构式影像报告系统</h1>
+            <p>基于LI-RADS TRA v2024 制定</p>
+        </header>
+        
+        <main>
+            <div class="card">
+                <div class="card-title">
+                    <i class="fas fa-plus-circle"></i>
+                    <h2>添加靶病灶信息</h2>
+                </div>
+                
+                <div id="lesions-container">
+                    <!-- 病灶信息将通过JS动态添加 -->
+                </div>
+                
+                <div class="actions">
+                    <button id="add-lesion" class="btn btn-primary">
+                        <i class="fas fa-plus"></i> 添加靶病灶
+                    </button>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-title">
+                    <i class="fas fa-clipboard-list"></i>
+                    <h2>其他影像表现</h2>
+                </div>
+                
+                <div class="form-group">
+                    <textarea id="other-imaging" class="editable-textarea">
+肝脏：    
+胆囊：未见明确异常。
+胰腺：形态及大小未见异常，实质内未见异常信号灶，增强后未见异常强化灶，主胰管未见扩张，胰腺周围清晰。
+脾脏：形态及大小未见异常，实质未见异常信号及异常强化灶。
+肾上腺：未见明显异常。
+其它：肝门部及腹膜后多发小淋巴结。
+                    </textarea>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-title">
+                    <i class="fas fa-stethoscope"></i>
+                    <h2>影像诊断</h2>
+                </div>
+                
+                <div id="impression-container">
+                    <!-- 影像诊断内容将通过JS动态生成 -->
+                </div>
+                
+                <div class="actions">
+                    <button id="generate-report" class="btn btn-print">
+                        <i class="fas fa-file-medical"></i> 生成结构式报告
+                    </button>
+                </div>
+            </div>
+            
+            <!-- 报告预览区域 -->
+            <div id="report-container">
+                <div class="report-header">
+                    <h2>肝癌局部治疗术后MRI结构式影像报告</h2>
+                    <div style="margin-top: 8px; color: #555; font-size: 0.88rem;">
+                        报告编号：<span id="report-number">REP20230616001</span>
+                        &nbsp;|&nbsp;报告日期：<span id="report-date">2023-06-16</span>
+                    </div>
+                </div>
+                
+                <div class="report-section">
+                    <h3>报告内容</h3>
+                    
+                    <div id="report-content">
+                        <!-- 靶病灶信息和其他影像表现 -->
+                        <div id="target-and-additional-section">
+                            <h4>靶病灶信息</h4>
+                            <div id="report-lesions">
+                                <!-- 病灶报告内容将通过JS动态生成 -->
+                            </div>
+                            
+                            <div class="section-divider"></div>
+                            
+                            <h4>其他影像表现</h4>
+                            <div id="report-additional">
+                                <!-- 其他影像表现内容将通过JS动态生成 -->
+                            </div>
+                        </div>
+                        
+                        <div class="copy-section">
+                            <button class="btn btn-copy" onclick="copyTargetAndAdditional()">
+                                <i class="fas fa-copy"></i> 复制靶病灶信息和其他影像表现
+                            </button>
+                        </div>
+                        
+                        <div class="section-divider"></div>
+                        
+                        <!-- 影像诊断 -->
+                        <div id="impression-section">
+                            <h4>影像诊断</h4>
+                            <div id="report-impression">
+                                <!-- 影像诊断内容将通过JS动态生成 -->
+                            </div>
+                        </div>
+                        
+                        <div class="copy-section">
+                            <button class="btn btn-copy" onclick="copyImpression()">
+                                <i class="fas fa-copy"></i> 复制影像诊断内容
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="signature-area">
+                    <div class="signature-line">报告医师：________________</div>
+                    <div class="signature-line">审核医师：________________</div>
+                </div>
+                
+                <div class="report-actions">
+                    <button id="print-report" class="btn btn-print">
+                        <i class="fas fa-print"></i> 打印报告
+                    </button>
+                    <button id="close-report" class="btn btn-danger">
+                        <i class="fas fa-times"></i> 关闭报告
+                    </button>
+                </div>
+            </div>
+        </main>
+        
+        <footer>
+            <p>© 2025 肝癌局部治疗术后MRI结构式影像报告系统 | 基于LI-RADS TRA v2024标准</p>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const lesionsContainer = document.getElementById('lesions-container');
+            const addLesionBtn = document.getElementById('add-lesion');
+            const generateReportBtn = document.getElementById('generate-report');
+            const impressionContainer = document.getElementById('impression-container');
+            const printReportBtn = document.getElementById('print-report');
+            const closeReportBtn = document.getElementById('close-report');
+            const reportContainer = document.getElementById('report-container');
+            const otherImagingTextarea = document.getElementById('other-imaging');
+            
+            let lesionCount = 0;
+            
+            // 添加病灶函数
+            function addLesion() {
+                lesionCount++;
+                
+                // 生成年份选项
+                let yearOptions = '';
+                for (let year = 1910; year <= 2100; year++) {
+                    yearOptions += `<option value="${year}">${year}</option>`;
+                }
+                
+                // 生成月份选项
+                let monthOptions = '';
+                for (let month = 1; month <= 12; month++) {
+                    const monthStr = month < 10 ? `0${month}` : month;
+                    monthOptions += `<option value="${monthStr}">${monthStr}</option>`;
+                }
+                
+                // 生成日期选项
+                let dayOptions = '';
+                for (let day = 1; day <= 31; day++) {
+                    const dayStr = day < 10 ? `0${day}` : day;
+                    dayOptions += `<option value="${dayStr}">${dayStr}</option>`;
+                }
+                
+                const lesionHTML = `
+                <div class="lesion-section" id="lesion-${lesionCount}">
+                    <div class="lesion-header">
+                        <div class="lesion-title"><i class="fas fa-tag"></i> 靶病灶 #${lesionCount}</div>
+                        <button class="remove-lesion" data-id="${lesionCount}">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                    
+                    <div class="lesion-grid">
+                        <!-- 部位 -->
+                        <div class="lesion-item">
+                            <div class="lesion-item-title">部位</div>
+                            <div class="checkbox-group">
+                                ${['S1', 'S2', 'S3', 'S4', 'S5', 'S6', 'S7', 'S8'].map(s => `
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="lesion-${lesionCount}-location-${s}" value="${s}">
+                                        <label for="lesion-${lesionCount}-location-${s}">${s}</label>
+                                    </div>
+                                `).join('')}
+                            </div>
+                            <div class="inline-group" style="margin-top: 10px;">
+                                <div class="form-group">
+                                    <label>SE[ ]</label>
+                                    <input type="text" id="lesion-${lesionCount}-location-se" placeholder="填写SE">
+                                </div>
+                                <div class="form-group">
+                                    <label>IM[ ]</label>
+                                    <input type="text" id="lesion-${lesionCount}-location-im" placeholder="填写IM">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- 治疗前状态 -->
+                        <div class="lesion-item">
+                            <div class="lesion-item-title">治疗前状态</div>
+                            <div class="checkbox-group">
+                                ${['不确定', '未见', 'LR-3', 'LR-4', 'LR-5', 'LR-M', 'TIV', '活检HCC', '活检ICC', '活检cHCC-CCA'].map(state => `
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="lesion-${lesionCount}-pretreatment-${state.replace(/\s+/g, '-')}" value="${state}">
+                                        <label for="lesion-${lesionCount}-pretreatment-${state.replace(/\s+/g, '-')}">${state}</label>
+                                    </div>
+                                `).join('')}
+                            </div>
+                        </div>
+                        
+                        <!-- 最近一次治疗 -->
+                        <div class="lesion-item">
+                            <div class="lesion-item-title">最近一次治疗</div>
+                            <div class="form-group">
+                                <label>日期</label>
+                                <div class="date-selector">
+                                    <select id="lesion-${lesionCount}-last-treatment-year">
+                                        <option value="">年</option>
+                                        ${yearOptions}
+                                    </select>
+                                    <select id="lesion-${lesionCount}-last-treatment-month">
+                                        <option value="">月</option>
+                                        ${monthOptions}
+                                    </select>
+                                    <select id="lesion-${lesionCount}-last-treatment-day">
+                                        <option value="">日</option>
+                                        ${dayOptions}
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>治疗方式</label>
+                                <div class="checkbox-group">
+                                    ${[
+                                        '射频消融(RFA)', 
+                                        '微波消融(MWA)', 
+                                        '冷冻消融(cryoablation)', 
+                                        '乙醇消融(PEA)', 
+                                        '经动脉肿瘤栓塞术(TAE)', 
+                                        'DEB-TACE', 
+                                        'cTACE', 
+                                        '经动脉放射栓塞(TARE)', 
+                                        '立体定向放射治疗(SBRT)', 
+                                        '未知'
+                                    ].map(treatment => `
+                                        <div class="checkbox-item">
+                                            <input type="checkbox" id="lesion-${lesionCount}-treatment-${treatment.split('(')[0]}" value="${treatment}">
+                                            <label for="lesion-${lesionCount}-treatment-${treatment.split('(')[0]}">${treatment}</label>
+                                        </div>
+                                    `).join('')}
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- 肿块样强化 -->
+                        <div class="lesion-item">
+                            <div class="lesion-item-title">肿块样强化</div>
+                            <div class="form-group">
+                                <select id="lesion-${lesionCount}-mass">
+                                    <option value="">选择状态</option>
+                                    <option value="有">有</option>
+                                    <option value="无">无</option>
+                                    <option value="不确定">不确定</option>
+                                    <option value="无法评估">无法评估</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <!-- 最大强化灶尺寸 -->
+                        <div class="lesion-item">
+                            <div class="lesion-item-title">最大强化灶尺寸(最大层面)</div>
+                            <div class="inline-group">
+                                <div class="form-group">
+                                    <input type="number" id="lesion-${lesionCount}-max-size1" placeholder="长(mm)" min="0" step="0.1">
+                                </div>
+                                <div style="font-weight: bold;">×</div>
+                                <div class="form-group">
+                                    <input type="number" id="lesion-${lesionCount}-max-size2" placeholder="宽(mm)" min="0" step="0.1">
+                                </div>
+                                <div style="font-weight: bold;">mm</div>
+                            </div>
+                            <div class="inline-group" style="margin-top: 10px;">
+                                <div class="form-group">
+                                    <label>SE[ ]</label>
+                                    <input type="text" id="lesion-${lesionCount}-max-size-se" placeholder="填写SE">
+                                </div>
+                                <div class="form-group">
+                                    <label>IM[ ]</label>
+                                    <input type="text" id="lesion-${lesionCount}-max-size-im" placeholder="填写IM">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- 其他信息 -->
+                        <div class="lesion-item">
+                            <div class="lesion-item-title">其他信息</div>
+                            <div class="form-group">
+                                <label>既往尺寸</label>
+                                <div class="inline-group">
+                                    <div class="form-group">
+                                        <input type="number" id="lesion-${lesionCount}-previous-size1" placeholder="长(mm)" min="0" step="0.1">
+                                    </div>
+                                    <div style="font-weight: bold;">×</div>
+                                    <div class="form-group">
+                                        <input type="number" id="lesion-${lesionCount}-previous-size2" placeholder="宽(mm)" min="0" step="0.1">
+                                    </div>
+                                    <div style="font-weight: bold;">mm</div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>辅助特征</label>
+                                <div class="inline-group">
+                                    <div class="form-group">
+                                        <select id="lesion-${lesionCount}-feature1">
+                                            <option value="">T2高信号</option>
+                                            <option value="有">有</option>
+                                            <option value="无">无</option>
+                                            <option value="不适用">不适用</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <select id="lesion-${lesionCount}-feature2">
+                                            <option value="">弥散受限</option>
+                                            <option value="有">有</option>
+                                            <option value="无">无</option>
+                                            <option value="不适用">不适用</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="lesion-${lesionCount}-lirads">LI-RADS分类</label>
+                                <select id="lesion-${lesionCount}-lirads">
+                                    <option value="">选择分类</option>
+                                    <option value="无法评价(Nonevaluable)">无法评价(Nonevaluable)</option>
+                                    <option value="无活性(Nonviable)">无活性(Nonviable)</option>
+                                    <option value="不确定(Equivocal)">不确定(Equivocal)</option>
+                                    <option value="无进展(Nonprogressing)">无进展(Nonprogressing)</option>
+                                    <option value="活性(Viable)">活性(Viable)</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                `;
+                
+                lesionsContainer.insertAdjacentHTML('beforeend', lesionHTML);
+                
+                // 更新影像诊断
+                updateImpression();
+            }
+            
+            // 更新影像诊断
+            function updateImpression() {
+                let impressionHTML = '';
+                
+                for (let i = 1; i <= lesionCount; i++) {
+                    if (document.getElementById(`lesion-${i}`)) {
+                        const lirads = document.getElementById(`lesion-${i}-lirads`).value || '[请选择]';
+                        
+                        impressionHTML += `
+                        <div class="impression-item">
+                            <div class="impression-header">病灶 ${i} 影像诊断</div>
+                            <div class="form-group">
+                                <textarea id="impression-${i}" rows="3" style="width: 100%;">${i}、肝癌局部治疗后，靶病灶${i}治疗反应为：${lirads}，对比前片[引用前片日期]，病灶[缩小或增大]；</textarea>
+                            </div>
+                        </div>
+                        `;
+                    }
+                }
+                
+                // 添加医师可编辑区域
+                impressionHTML += `
+                <div class="impression-item">
+                    <div class="impression-header">其他影像诊断内容</div>
+                    <div class="form-group">
+                        <textarea id="additional-impression" rows="4" style="width: 100%;" placeholder="在此添加其他影像诊断内容..."></textarea>
+                    </div>
+                </div>
+                `;
+                
+                impressionContainer.innerHTML = impressionHTML;
+            }
+            
+            // 添加第一个病灶
+            addLesion();
+            
+            // 添加病灶按钮事件
+            addLesionBtn.addEventListener('click', addLesion);
+            
+            // 删除病灶事件委托
+            lesionsContainer.addEventListener('click', function(e) {
+                if (e.target.closest('.remove-lesion')) {
+                    const btn = e.target.closest('.remove-lesion');
+                    const id = btn.getAttribute('data-id');
+                    const lesionEl = document.getElementById(`lesion-${id}`);
+                    lesionEl.remove();
+                    lesionCount--;
+                    
+                    // 更新影像诊断
+                    updateImpression();
+                }
+            });
+            
+            // 监听LI-RADS分类变化
+            lesionsContainer.addEventListener('change', function(e) {
+                if (e.target.id && e.target.id.includes('lirads')) {
+                    updateImpression();
+                }
+            });
+            
+            // 生成报告
+            generateReportBtn.addEventListener('click', function() {
+                if (lesionCount === 0) {
+                    alert('请至少添加一个靶病灶！');
+                    return;
+                }
+                
+                // 更新报告日期
+                const now = new Date();
+                document.getElementById('report-date').textContent = 
+                    `${now.getFullYear()}-${String(now.getMonth()+1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}`;
+                
+                // 生成报告编号
+                const reportNum = `REP${now.getFullYear()}${String(now.getMonth()+1).padStart(2, '0')}${String(now.getDate()).padStart(2, '0')}${Math.floor(Math.random()*1000).toString().padStart(3, '0')}`;
+                document.getElementById('report-number').textContent = reportNum;
+                
+                // 生成病灶报告内容
+                let lesionsHTML = '';
+                for (let i = 1; i <= lesionCount; i++) {
+                    if (document.getElementById(`lesion-${i}`)) {
+                        // 获取选中的部位
+                        const selectedLocations = [];
+                        for (let s = 1; s <= 8; s++) {
+                            const cb = document.getElementById(`lesion-${i}-location-S${s}`);
+                            if (cb && cb.checked) {
+                                selectedLocations.push(`S${s}`);
+                            }
+                        }
+                        const locations = selectedLocations.length > 0 ? selectedLocations.join(', ') : '未填写';
+                        
+                        const se = document.getElementById(`lesion-${i}-location-se`).value || '';
+                        const im = document.getElementById(`lesion-${i}-location-im`).value || '';
+                        
+                        // 获取选中的治疗前状态
+                        const selectedPretreatments = [];
+                        const pretreatmentOptions = ['不确定', '未见', 'LR-3', 'LR-4', 'LR-5', 'LR-M', 'TIV', '活检HCC', '活检ICC', '活检cHCC-CCA'];
+                        pretreatmentOptions.forEach(state => {
+                            const cb = document.getElementById(`lesion-${i}-pretreatment-${state.replace(/\s+/g, '-')}`);
+                            if (cb && cb.checked) {
+                                selectedPretreatments.push(state);
+                            }
+                        });
+                        const pretreatment = selectedPretreatments.length > 0 ? selectedPretreatments.join(', ') : '未填写';
+                        
+                        const year = document.getElementById(`lesion-${i}-last-treatment-year`).value || '';
+                        const month = document.getElementById(`lesion-${i}-last-treatment-month`).value || '';
+                        const day = document.getElementById(`lesion-${i}-last-treatment-day`).value || '';
+                        const treatmentDate = year && month && day ? `${year}年${month}月${day}日` : '未填写';
+                        
+                        // 获取选中的治疗方式
+                        const selectedTreatments = [];
+                        const treatmentOptions = [
+                            '射频消融(RFA)', 
+                            '微波消融(MWA)', 
+                            '冷冻消融(cryoablation)', 
+                            '乙醇消融(PEA)', 
+                            '经动脉肿瘤栓塞术(TAE)', 
+                            'DEB-TACE', 
+                            'cTACE', 
+                            '经动脉放射栓塞(TARE)', 
+                            '立体定向放射治疗(SBRT)', 
+                            '未知'
+                        ];
+                        treatmentOptions.forEach(treatment => {
+                            const cb = document.getElementById(`lesion-${i}-treatment-${treatment.split('(')[0]}`);
+                            if (cb && cb.checked) {
+                                selectedTreatments.push(treatment);
+                            }
+                        });
+                        const treatmentType = selectedTreatments.length > 0 ? selectedTreatments.join(', ') : '未填写';
+                        
+                        const mass = document.getElementById(`lesion-${i}-mass`).value || '未填写';
+                        
+                        const size1 = document.getElementById(`lesion-${i}-max-size1`).value || '';
+                        const size2 = document.getElementById(`lesion-${i}-max-size2`).value || '';
+                        const maxSize = size1 && size2 ? `${size1}×${size2} mm` : '未填写';
+                        
+                        const maxSe = document.getElementById(`lesion-${i}-max-size-se`).value || '';
+                        const maxIm = document.getElementById(`lesion-${i}-max-size-im`).value || '';
+                        
+                        const prevSize1 = document.getElementById(`lesion-${i}-previous-size1`).value || '';
+                        const prevSize2 = document.getElementById(`lesion-${i}-previous-size2`).value || '';
+                        const previousSize = prevSize1 && prevSize2 ? `${prevSize1}×${prevSize2} mm` : '未填写';
+                        
+                        const feature1 = document.getElementById(`lesion-${i}-feature1`).value || '未填写';
+                        const feature2 = document.getElementById(`lesion-${i}-feature2`).value || '未填写';
+                        const lirads = document.getElementById(`lesion-${i}-lirads`).value || '未填写';
+                        
+                        lesionsHTML += `
+                        <div class="lesion-report">
+                            <h4>靶病灶 ${i}</h4>
+                            <div class="lesion-data">
+                                <div class="lesion-data-item"><strong>部位：</strong> ${locations} (SE[${se}], IM[${im}])</div>
+                                <div class="lesion-data-item"><strong>治疗前状态：</strong> ${pretreatment}</div>
+                                <div class="lesion-data-item"><strong>最近治疗：</strong> ${treatmentDate} (${treatmentType})</div>
+                                <div class="lesion-data-item"><strong>肿块样强化：</strong> ${mass}</div>
+                                <div class="lesion-data-item"><strong>最大强化灶尺寸：</strong> ${maxSize} (SE[${maxSe}], IM[${maxIm}])</div>
+                                <div class="lesion-data-item"><strong>既往尺寸：</strong> ${previousSize}</div>
+                                <div class="lesion-data-item"><strong>T2轻中度高信号：</strong> ${feature1}</div>
+                                <div class="lesion-data-item"><strong>弥散受限：</strong> ${feature2}</div>
+                                <div class="lesion-data-item"><strong>LI-RADS分类：</strong> ${lirads}</div>
+                            </div>
+                        </div>
+                        `;
+                    }
+                }
+                document.getElementById('report-lesions').innerHTML = lesionsHTML;
+                
+                // 添加其他影像表现
+                const additionalInfo = otherImagingTextarea.value;
+                document.getElementById('report-additional').innerHTML = `<div class="default-text">${additionalInfo}</div>`;
+                
+                // 生成影像诊断
+                let impressionHTML = '';
+                for (let i = 1; i <= lesionCount; i++) {
+                    if (document.getElementById(`impression-${i}`)) {
+                        const impression = document.getElementById(`impression-${i}`).value;
+                        impressionHTML += impression + '\n\n';
+                    }
+                }
+                
+                // 添加额外的影像诊断内容
+                const additionalImpression = document.getElementById('additional-impression') ? 
+                    document.getElementById('additional-impression').value : '';
+                
+                if (additionalImpression) {
+                    impressionHTML += additionalImpression;
+                }
+                
+                document.getElementById('report-impression').innerHTML = 
+                    `<div class="impression-report">${impressionHTML}</div>`;
+                
+                // 显示报告
+                reportContainer.style.display = 'block';
+                window.scrollTo({
+                    top: reportContainer.offsetTop,
+                    behavior: 'smooth'
+                });
+            });
+            
+            // 打印报告
+            printReportBtn.addEventListener('click', function() {
+                window.print();
+            });
+            
+            // 关闭报告
+            closeReportBtn.addEventListener('click', function() {
+                reportContainer.style.display = 'none';
+            });
+        });
+        
+        // 复制靶病灶信息和其他影像表现
+        function copyTargetAndAdditional() {
+            const lesionsContent = document.getElementById('report-lesions').innerText;
+            const additionalContent = document.getElementById('report-additional').innerText;
+            
+            const fullContent = `靶病灶信息:\n${lesionsContent}\n\n其他影像表现:\n${additionalContent}`;
+            
+            // 创建临时文本区域进行复制
+            const textArea = document.createElement('textarea');
+            textArea.value = fullContent;
+            document.body.appendChild(textArea);
+            textArea.select();
+            
+            try {
+                document.execCommand('copy');
+                alert('靶病灶信息和其他影像表现已复制到剪贴板！');
+            } catch (err) {
+                console.error('复制失败:', err);
+                alert('复制失败，请手动选择内容复制');
+            }
+            
+            document.body.removeChild(textArea);
+        }
+        
+        // 复制影像诊断内容
+        function copyImpression() {
+            const impressionContent = document.getElementById('report-impression').innerText;
+            
+            // 创建临时文本区域进行复制
+            const textArea = document.createElement('textarea');
+            textArea.value = impressionContent;
+            document.body.appendChild(textArea);
+            textArea.select();
+            
+            try {
+                document.execCommand('copy');
+                alert('影像诊断内容已复制到剪贴板！');
+            } catch (err) {
+                console.error('复制失败:', err);
+                alert('复制失败，请手动选择内容复制');
+            }
+            
+            document.body.removeChild(textArea);
+        }
+    </script>
+</body>
+</html>
