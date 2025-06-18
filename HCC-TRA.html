@@ -14,7 +14,7 @@
         }
         
         body {
-            background: linear-gradient(135deg, #006400, #008000, #006400);
+            background: linear-gradient(135deg, #005a00, #008000, #005a00);
             color: #333;
             line-height: 1.6;
             padding: 20px;
@@ -28,52 +28,52 @@
         
         header {
             text-align: center;
-            padding: 30px 0;
-            margin-bottom: 30px;
+            padding: 25px 0;
+            margin-bottom: 25px;
             color: white;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            text-shadow: 0 2px 8px rgba(0,0,0,0.3);
             position: relative;
         }
         
         header h1 {
-            font-size: 2.4rem;
-            margin-bottom: 10px;
+            font-size: 2.2rem;
+            margin-bottom: 8px;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 15px;
+            gap: 12px;
         }
         
         header h1 i {
             background: rgba(255,255,255,0.1);
             border-radius: 50%;
-            width: 60px;
-            height: 60px;
+            width: 55px;
+            height: 55px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 28px;
-            box-shadow: 0 0 15px rgba(0,0,0,0.2);
+            font-size: 24px;
+            box-shadow: 0 0 12px rgba(0,0,0,0.2);
         }
         
         header p {
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             max-width: 800px;
-            margin: 10px auto 0;
+            margin: 8px auto 0;
             opacity: 0.9;
             background: rgba(0,0,0,0.15);
-            padding: 8px 15px;
+            padding: 6px 14px;
             border-radius: 50px;
-            backdrop-filter: blur(5px);
+            backdrop-filter: blur(4px);
             font-weight: 500;
         }
         
         .card {
             background: white;
-            border-radius: 12px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-            padding: 25px;
-            margin-bottom: 25px;
+            border-radius: 10px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+            padding: 22px;
+            margin-bottom: 22px;
             transition: transform 0.3s ease;
             position: relative;
             overflow: hidden;
@@ -86,31 +86,31 @@
             top: 0;
             left: 0;
             right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, #006400, #00cc00, #006400);
+            height: 3px;
+            background: linear-gradient(90deg, #005a00, #00b300, #005a00);
         }
         
         .card:hover {
             transform: translateY(-3px);
-            box-shadow: 0 12px 35px rgba(0,0,0,0.2);
+            box-shadow: 0 10px 28px rgba(0,0,0,0.18);
         }
         
         .card-title {
             display: flex;
             align-items: center;
-            font-size: 1.4rem;
-            color: #006400;
-            margin-bottom: 20px;
-            padding-bottom: 12px;
+            font-size: 1.3rem;
+            color: #005a00;
+            margin-bottom: 18px;
+            padding-bottom: 10px;
             border-bottom: 2px solid #eaeaea;
         }
         
         .card-title i {
             margin-right: 12px;
-            background: #006400;
+            background: #005a00;
             color: white;
-            width: 36px;
-            height: 36px;
+            width: 34px;
+            height: 34px;
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -120,12 +120,12 @@
         .form-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 18px;
-            margin-bottom: 20px;
+            gap: 16px;
+            margin-bottom: 18px;
         }
         
         .form-group {
-            margin-bottom: 18px;
+            margin-bottom: 16px;
         }
         
         .form-group label {
@@ -133,17 +133,17 @@
             margin-bottom: 6px;
             font-weight: 600;
             color: #444;
-            font-size: 0.95rem;
+            font-size: 0.92rem;
         }
         
         .form-group input,
         .form-group select,
         .form-group textarea {
             width: 100%;
-            padding: 10px 12px;
+            padding: 9px 11px;
             border: 2px solid #d1d1d1;
-            border-radius: 6px;
-            font-size: 15px;
+            border-radius: 5px;
+            font-size: 14px;
             transition: all 0.3s;
         }
         
@@ -157,7 +157,7 @@
         
         .inline-group {
             display: flex;
-            gap: 8px;
+            gap: 7px;
             align-items: center;
         }
         
@@ -169,14 +169,15 @@
         .checkbox-group {
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
-            margin-top: 5px;
+            gap: 8px;
+            margin-top: 4px;
         }
         
         .checkbox-item {
             display: flex;
             align-items: center;
-            gap: 5px;
+            gap: 4px;
+            font-size: 0.9rem;
         }
         
         .checkbox-item input {
@@ -184,10 +185,10 @@
         }
         
         .btn {
-            padding: 10px 20px;
+            padding: 9px 18px;
             border: none;
-            border-radius: 6px;
-            font-size: 15px;
+            border-radius: 5px;
+            font-size: 14px;
             font-weight: 600;
             cursor: pointer;
             transition: all 0.3s ease;
@@ -197,91 +198,81 @@
         }
         
         .btn i {
-            margin-right: 6px;
+            margin-right: 5px;
         }
         
         .btn-primary {
-            background: #006400;
+            background: #005a00;
             color: white;
         }
         
         .btn-primary:hover {
-            background: #004d00;
+            background: #004000;
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0, 100, 0, 0.3);
-        }
-        
-        .btn-success {
-            background: #28a745;
-            color: white;
-        }
-        
-        .btn-success:hover {
-            background: #218838;
-            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 90, 0, 0.25);
         }
         
         .btn-print {
-            background: #ff9800;
+            background: #ff8c00;
             color: white;
         }
         
         .btn-print:hover {
-            background: #e08600;
+            background: #e07d00;
             transform: translateY(-2px);
         }
         
         .btn-copy {
-            background: #1a73e8;
+            background: #1a6fd8;
             color: white;
         }
         
         .btn-copy:hover {
-            background: #0d62c9;
+            background: #0c5ebf;
             transform: translateY(-2px);
         }
         
         .btn-danger {
-            background: #dc3545;
+            background: #d32f2f;
             color: white;
         }
         
         .btn-danger:hover {
-            background: #bd2130;
+            background: #b22424;
             transform: translateY(-2px);
         }
         
         .actions {
             display: flex;
-            gap: 12px;
+            gap: 10px;
             flex-wrap: wrap;
-            margin-top: 18px;
+            margin-top: 16px;
         }
         
         .lesion-section {
             position: relative;
-            padding: 20px;
+            padding: 18px;
             border: 2px dashed #d1d1d1;
-            border-radius: 8px;
-            margin-bottom: 25px;
+            border-radius: 7px;
+            margin-bottom: 22px;
             background: #f9fff9;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            box-shadow: 0 3px 10px rgba(0,0,0,0.04);
         }
         
         .lesion-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 18px;
+            margin-bottom: 16px;
         }
         
         .lesion-title {
-            font-size: 1.2rem;
-            color: #006400;
+            font-size: 1.15rem;
+            color: #005a00;
             font-weight: 600;
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 7px;
         }
         
         .lesion-title i {
@@ -292,8 +283,8 @@
             background: #ff6b6b;
             color: white;
             border: none;
-            width: 28px;
-            height: 28px;
+            width: 26px;
+            height: 26px;
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -307,38 +298,49 @@
             transform: rotate(90deg);
         }
         
+        .lesion-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+        
+        .lesion-item {
+            padding: 15px;
+            border-radius: 8px;
+            background: #f0f8ff;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+        }
+        
+        .lesion-item-title {
+            font-size: 1rem;
+            color: #005a00;
+            margin-bottom: 10px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid #d1e0ee;
+            font-weight: 600;
+        }
+        
         .impression-item {
             background: #e8ffe8;
-            padding: 12px;
-            border-radius: 6px;
-            margin-bottom: 12px;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 10px;
             border-left: 3px solid #008000;
         }
         
         .impression-header {
             font-weight: 600;
-            margin-bottom: 8px;
-            color: #006400;
-            font-size: 1.05rem;
-        }
-        
-        .impression-content {
-            display: flex;
-            gap: 12px;
-            flex-wrap: wrap;
-        }
-        
-        .impression-content .form-group {
-            min-width: 180px;
-            margin-bottom: 0;
+            margin-bottom: 7px;
+            color: #005a00;
+            font-size: 1.0rem;
         }
         
         footer {
             text-align: center;
             color: white;
-            padding: 15px 0;
-            margin-top: 25px;
-            font-size: 0.85rem;
+            padding: 12px 0;
+            margin-top: 22px;
+            font-size: 0.82rem;
             opacity: 0.9;
         }
         
@@ -346,57 +348,58 @@
         #report-container {
             display: none;
             background: white;
-            padding: 30px;
+            padding: 28px;
             border-radius: 8px;
-            box-shadow: 0 5px 25px rgba(0,0,0,0.15);
-            margin-top: 25px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+            margin-top: 22px;
             position: relative;
             border: 1px solid #d0d0d0;
         }
         
         .report-header {
             text-align: center;
-            margin-bottom: 25px;
-            border-bottom: 2px solid #006400;
-            padding-bottom: 15px;
+            margin-bottom: 22px;
+            border-bottom: 2px solid #005a00;
+            padding-bottom: 12px;
         }
         
         .report-header h2 {
-            color: #006400;
-            font-size: 1.8rem;
-            margin-bottom: 5px;
+            color: #005a00;
+            font-size: 1.7rem;
+            margin-bottom: 4px;
         }
         
         .report-section {
-            margin-bottom: 25px;
+            margin-bottom: 22px;
             position: relative;
-            padding: 10px;
+            padding: 8px;
         }
         
         .report-section h3 {
-            color: #006400;
+            color: #005a00;
             border-bottom: 1px solid #ddd;
-            padding-bottom: 6px;
-            margin-bottom: 12px;
-            font-size: 1.2rem;
+            padding-bottom: 5px;
+            margin-bottom: 10px;
+            font-size: 1.15rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
         
         .copy-btn {
-            padding: 4px 10px;
-            font-size: 0.8rem;
-            background: #1a73e8;
+            padding: 4px 9px;
+            font-size: 0.78rem;
+            background: #1a6fd8;
             color: white;
             border: none;
             border-radius: 4px;
             cursor: pointer;
+            margin-left: 5px;
         }
         
         .lesion-report {
-            margin-bottom: 20px;
-            padding-bottom: 15px;
+            margin-bottom: 18px;
+            padding-bottom: 12px;
             border-bottom: 1px dashed #ddd;
         }
         
@@ -406,95 +409,102 @@
         
         .lesion-data {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 12px;
-            margin-bottom: 8px;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 10px;
+            margin-bottom: 7px;
         }
         
         .lesion-data-item {
-            margin-bottom: 6px;
-            font-size: 0.95rem;
+            margin-bottom: 5px;
+            font-size: 0.92rem;
         }
         
         .lesion-data-item strong {
-            color: #006400;
-            min-width: 140px;
+            color: #005a00;
+            min-width: 130px;
             display: inline-block;
         }
         
         .impression-report {
             background: #f9fff9;
-            padding: 12px;
-            border-radius: 6px;
-            margin-top: 15px;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 12px;
             border-left: 3px solid #008000;
             white-space: pre-wrap;
-            line-height: 1.8;
+            line-height: 1.7;
+            font-size: 0.95rem;
         }
         
         .signature-area {
-            margin-top: 40px;
+            margin-top: 35px;
             text-align: right;
         }
         
         .signature-line {
             display: inline-block;
-            width: 220px;
+            width: 210px;
             border-top: 1px solid #000;
-            margin-top: 60px;
+            margin-top: 50px;
             text-align: center;
-            padding-top: 4px;
+            padding-top: 3px;
+            font-size: 0.9rem;
         }
         
         .report-actions {
             display: flex;
             justify-content: center;
-            gap: 15px;
-            margin-top: 25px;
+            gap: 12px;
+            margin-top: 22px;
         }
         
         /* 日期选择器样式 */
         .date-selector {
             display: flex;
-            gap: 8px;
+            gap: 7px;
         }
         
         .date-selector select {
             flex: 1;
-            padding: 8px;
-        }
-        
-        .default-text {
-            font-family: monospace;
-            line-height: 1.8;
-            padding: 15px;
-            background-color: #f8f8f8;
-            border-radius: 5px;
-            border: 1px solid #e0e0e0;
-            white-space: pre-wrap;
+            padding: 7px;
+            font-size: 0.9rem;
         }
         
         .editable-textarea {
             width: 100%;
-            min-height: 200px;
-            padding: 15px;
+            min-height: 180px;
+            padding: 14px;
             font-family: monospace;
-            line-height: 1.8;
+            line-height: 1.7;
             border: 1px solid #d1d1d1;
-            border-radius: 8px;
+            border-radius: 7px;
             resize: vertical;
-            font-size: 15px;
+            font-size: 14px;
         }
         
+        .section-divider {
+            height: 1px;
+            background: #e0e0e0;
+            margin: 16px 0;
+        }
+        
+        .copy-section {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 10px;
+        }
+        
+        /* 打印优化 */
         @media print {
             body * {
                 visibility: hidden;
-            margin: 0;
+                margin: 0;
                 padding: 0;
             }
             
             body {
                 background: white;
+                font-size: 12pt;
             }
             
             .container, #report-container, #report-container * {
@@ -504,6 +514,7 @@
                 padding: 0;
                 box-shadow: none;
                 border: none;
+                color: #000;
             }
             
             #report-container {
@@ -511,43 +522,44 @@
                 left: 0;
                 top: 0;
                 width: 100%;
-                padding: 15px 30px;
+                padding: 15px 25px;
                 box-shadow: none;
                 border: none;
                 page-break-after: avoid;
                 page-break-before: avoid;
             }
             
-            .report-actions, .copy-btn {
+            .report-actions, .copy-btn, .copy-section {
                 display: none;
             }
             
             .report-header {
-                margin-bottom: 10px;
-                padding-bottom: 10px;
+                margin-bottom: 8px;
+                padding-bottom: 8px;
             }
             
             .report-section {
-                margin-bottom: 15px;
+                margin-bottom: 12px;
                 page-break-inside: avoid;
             }
             
             .lesion-data {
-                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-                gap: 8px;
+                grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+                gap: 6px;
             }
             
             .signature-area {
-                margin-top: 20px;
+                margin-top: 15px;
             }
             
             .signature-line {
-                margin-top: 40px;
+                margin-top: 30px;
+                width: 180px;
             }
             
             /* 隐藏页眉页脚 */
             @page {
-                margin: 0.5cm;
+                margin: 0.7cm;
                 size: A4;
             }
         }
@@ -559,11 +571,15 @@
             
             .inline-group {
                 flex-direction: column;
-                gap: 12px;
+                gap: 10px;
+            }
+            
+            .lesion-grid {
+                grid-template-columns: 1fr;
             }
             
             header h1 {
-                font-size: 1.8rem;
+                font-size: 1.7rem;
             }
             
             .actions {
@@ -644,45 +660,52 @@
             <div id="report-container">
                 <div class="report-header">
                     <h2>肝癌局部治疗术后MRI结构式影像报告</h2>
-                    <div style="margin-top: 10px; color: #555; font-size: 0.9rem;">
+                    <div style="margin-top: 8px; color: #555; font-size: 0.88rem;">
                         报告编号：<span id="report-number">REP20230616001</span>
                         &nbsp;|&nbsp;报告日期：<span id="report-date">2023-06-16</span>
                     </div>
                 </div>
                 
                 <div class="report-section">
-                    <h3>
-                        靶病灶信息
-                        <button class="copy-btn" onclick="copySection('report-lesions')">
-                            <i class="fas fa-copy"></i> 复制内容
-                        </button>
-                    </h3>
-                    <div id="report-lesions">
-                        <!-- 病灶报告内容将通过JS动态生成 -->
-                    </div>
-                </div>
-                
-                <div class="report-section">
-                    <h3>
-                        其他影像表现
-                        <button class="copy-btn" onclick="copySection('report-additional')">
-                            <i class="fas fa-copy"></i> 复制内容
-                        </button>
-                    </h3>
-                    <div id="report-additional">
-                        <!-- 其他影像表现内容将通过JS动态生成 -->
-                    </div>
-                </div>
-                
-                <div class="report-section">
-                    <h3>
-                        影像诊断
-                        <button class="copy-btn" onclick="copySection('report-impression')">
-                            <i class="fas fa-copy"></i> 复制内容
-                        </button>
-                    </h3>
-                    <div id="report-impression">
-                        <!-- 影像诊断内容将通过JS动态生成 -->
+                    <h3>报告内容</h3>
+                    
+                    <div id="report-content">
+                        <!-- 靶病灶信息和其他影像表现 -->
+                        <div id="target-and-additional-section">
+                            <h4>靶病灶信息</h4>
+                            <div id="report-lesions">
+                                <!-- 病灶报告内容将通过JS动态生成 -->
+                            </div>
+                            
+                            <div class="section-divider"></div>
+                            
+                            <h4>其他影像表现</h4>
+                            <div id="report-additional">
+                                <!-- 其他影像表现内容将通过JS动态生成 -->
+                            </div>
+                        </div>
+                        
+                        <div class="copy-section">
+                            <button class="btn btn-copy" onclick="copyTargetAndAdditional()">
+                                <i class="fas fa-copy"></i> 复制靶病灶信息和其他影像表现
+                            </button>
+                        </div>
+                        
+                        <div class="section-divider"></div>
+                        
+                        <!-- 影像诊断 -->
+                        <div id="impression-section">
+                            <h4>影像诊断</h4>
+                            <div id="report-impression">
+                                <!-- 影像诊断内容将通过JS动态生成 -->
+                            </div>
+                        </div>
+                        
+                        <div class="copy-section">
+                            <button class="btn btn-copy" onclick="copyImpression()">
+                                <i class="fas fa-copy"></i> 复制影像诊断内容
+                            </button>
+                        </div>
                     </div>
                 </div>
                 
@@ -753,14 +776,10 @@
                         </button>
                     </div>
                     
-                    <div class="form-grid">
-                        <div class="form-group">
-                            <label for="lesion-${lesionCount}-target">治疗靶病灶序号</label>
-                            <input type="text" id="lesion-${lesionCount}-target" value="${lesionCount}" readonly>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label>部位</label>
+                    <div class="lesion-grid">
+                        <!-- 部位 -->
+                        <div class="lesion-item">
+                            <div class="lesion-item-title">部位</div>
                             <div class="checkbox-group">
                                 ${['S1', 'S2', 'S3', 'S4', 'S5', 'S6', 'S7', 'S8'].map(s => `
                                     <div class="checkbox-item">
@@ -769,7 +788,7 @@
                                     </div>
                                 `).join('')}
                             </div>
-                            <div class="inline-group" style="margin-top: 8px;">
+                            <div class="inline-group" style="margin-top: 10px;">
                                 <div class="form-group">
                                     <label>SE[ ]</label>
                                     <input type="text" id="lesion-${lesionCount}-location-se" placeholder="填写SE">
@@ -781,8 +800,9 @@
                             </div>
                         </div>
                         
-                        <div class="form-group">
-                            <label for="lesion-${lesionCount}-pretreatment">治疗前状态</label>
+                        <!-- 治疗前状态 -->
+                        <div class="lesion-item">
+                            <div class="lesion-item-title">治疗前状态</div>
                             <div class="checkbox-group">
                                 ${['不确定', '未见', 'LR-3', 'LR-4', 'LR-5', 'LR-M', 'TIV', '活检HCC', '活检ICC', '活检cHCC-CCA'].map(state => `
                                     <div class="checkbox-item">
@@ -793,8 +813,9 @@
                             </div>
                         </div>
                         
-                        <div class="form-group">
-                            <label>最近一次治疗</label>
+                        <!-- 最近一次治疗 -->
+                        <div class="lesion-item">
+                            <div class="lesion-item-title">最近一次治疗</div>
                             <div class="form-group">
                                 <label>日期</label>
                                 <div class="date-selector">
@@ -836,19 +857,23 @@
                             </div>
                         </div>
                         
-                        <div class="form-group">
-                            <label for="lesion-${lesionCount}-mass">肿块样强化</label>
-                            <select id="lesion-${lesionCount}-mass">
-                                <option value="">选择状态</option>
-                                <option value="有">有</option>
-                                <option value="无">无</option>
-                                <option value="不确定">不确定</option>
-                                <option value="无法评估">无法评估</option>
-                            </select>
+                        <!-- 肿块样强化 -->
+                        <div class="lesion-item">
+                            <div class="lesion-item-title">肿块样强化</div>
+                            <div class="form-group">
+                                <select id="lesion-${lesionCount}-mass">
+                                    <option value="">选择状态</option>
+                                    <option value="有">有</option>
+                                    <option value="无">无</option>
+                                    <option value="不确定">不确定</option>
+                                    <option value="无法评估">无法评估</option>
+                                </select>
+                            </div>
                         </div>
                         
-                        <div class="form-group">
-                            <label>最大强化灶尺寸(最大层面)</label>
+                        <!-- 最大强化灶尺寸 -->
+                        <div class="lesion-item">
+                            <div class="lesion-item-title">最大强化灶尺寸(最大层面)</div>
                             <div class="inline-group">
                                 <div class="form-group">
                                     <input type="number" id="lesion-${lesionCount}-max-size1" placeholder="长(mm)" min="0" step="0.1">
@@ -859,7 +884,7 @@
                                 </div>
                                 <div style="font-weight: bold;">mm</div>
                             </div>
-                            <div class="inline-group" style="margin-top: 8px;">
+                            <div class="inline-group" style="margin-top: 10px;">
                                 <div class="form-group">
                                     <label>SE[ ]</label>
                                     <input type="text" id="lesion-${lesionCount}-max-size-se" placeholder="填写SE">
@@ -871,54 +896,56 @@
                             </div>
                         </div>
                         
-                        <div class="form-group">
-                            <label>既往尺寸</label>
-                            <div class="inline-group">
-                                <div class="form-group">
-                                    <input type="number" id="lesion-${lesionCount}-previous-size1" placeholder="长(mm)" min="0" step="0.1">
-                                </div>
-                                <div style="font-weight: bold;">×</div>
-                                <div class="form-group">
-                                    <input type="number" id="lesion-${lesionCount}-previous-size2" placeholder="宽(mm)" min="0" step="0.1">
-                                </div>
-                                <div style="font-weight: bold;">mm</div>
-                            </div>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label>辅助特征</label>
-                            <div class="inline-group">
-                                <div class="form-group">
-                                    <label for="lesion-${lesionCount}-feature1">T2轻中度高信号</label>
-                                    <select id="lesion-${lesionCount}-feature1">
-                                        <option value="">选择</option>
-                                        <option value="有">有</option>
-                                        <option value="无">无</option>
-                                        <option value="不适用">不适用</option>
-                                    </select>
-                                </div>
-                                <div class="form-group">
-                                    <label for="lesion-${lesionCount}-feature2">弥散受限</label>
-                                    <select id="lesion-${lesionCount}-feature2">
-                                        <option value="">选择</option>
-                                        <option value="有">有</option>
-                                        <option value="无">无</option>
-                                        <option value="不适用">不适用</option>
-                                    </select>
+                        <!-- 其他信息 -->
+                        <div class="lesion-item">
+                            <div class="lesion-item-title">其他信息</div>
+                            <div class="form-group">
+                                <label>既往尺寸</label>
+                                <div class="inline-group">
+                                    <div class="form-group">
+                                        <input type="number" id="lesion-${lesionCount}-previous-size1" placeholder="长(mm)" min="0" step="0.1">
+                                    </div>
+                                    <div style="font-weight: bold;">×</div>
+                                    <div class="form-group">
+                                        <input type="number" id="lesion-${lesionCount}-previous-size2" placeholder="宽(mm)" min="0" step="0.1">
+                                    </div>
+                                    <div style="font-weight: bold;">mm</div>
                                 </div>
                             </div>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="lesion-${lesionCount}-lirads">LI-RADS分类</label>
-                            <select id="lesion-${lesionCount}-lirads">
-                                <option value="">选择分类</option>
-                                <option value="无法评价(Nonevaluable)">无法评价(Nonevaluable)</option>
-                                <option value="无活性(Nonviable)">无活性(Nonviable)</option>
-                                <option value="不确定(Equivocal)">不确定(Equivocal)</option>
-                                <option value="无进展(Nonprogressing)">无进展(Nonprogressing)</option>
-                                <option value="活性(Viable)">活性(Viable)</option>
-                            </select>
+                            
+                            <div class="form-group">
+                                <label>辅助特征</label>
+                                <div class="inline-group">
+                                    <div class="form-group">
+                                        <select id="lesion-${lesionCount}-feature1">
+                                            <option value="">T2高信号</option>
+                                            <option value="有">有</option>
+                                            <option value="无">无</option>
+                                            <option value="不适用">不适用</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <select id="lesion-${lesionCount}-feature2">
+                                            <option value="">弥散受限</option>
+                                            <option value="有">有</option>
+                                            <option value="无">无</option>
+                                            <option value="不适用">不适用</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="lesion-${lesionCount}-lirads">LI-RADS分类</label>
+                                <select id="lesion-${lesionCount}-lirads">
+                                    <option value="">选择分类</option>
+                                    <option value="无法评价(Nonevaluable)">无法评价(Nonevaluable)</option>
+                                    <option value="无活性(Nonviable)">无活性(Nonviable)</option>
+                                    <option value="不确定(Equivocal)">不确定(Equivocal)</option>
+                                    <option value="无进展(Nonprogressing)">无进展(Nonprogressing)</option>
+                                    <option value="活性(Viable)">活性(Viable)</option>
+                                </select>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1140,23 +1167,49 @@
             });
         });
         
-        // 复制板块内容
-        function copySection(sectionId) {
-            const section = document.getElementById(sectionId);
-            const range = document.createRange();
-            range.selectNode(section);
-            window.getSelection().removeAllRanges();
-            window.getSelection().addRange(range);
+        // 复制靶病灶信息和其他影像表现
+        function copyTargetAndAdditional() {
+            const lesionsContent = document.getElementById('report-lesions').innerText;
+            const additionalContent = document.getElementById('report-additional').innerText;
+            
+            const fullContent = `靶病灶信息:\n${lesionsContent}\n\n其他影像表现:\n${additionalContent}`;
+            
+            // 创建临时文本区域进行复制
+            const textArea = document.createElement('textarea');
+            textArea.value = fullContent;
+            document.body.appendChild(textArea);
+            textArea.select();
             
             try {
                 document.execCommand('copy');
-                alert('内容已复制到剪贴板！');
+                alert('靶病灶信息和其他影像表现已复制到剪贴板！');
             } catch (err) {
                 console.error('复制失败:', err);
                 alert('复制失败，请手动选择内容复制');
             }
             
-            window.getSelection().removeAllRanges();
+            document.body.removeChild(textArea);
+        }
+        
+        // 复制影像诊断内容
+        function copyImpression() {
+            const impressionContent = document.getElementById('report-impression').innerText;
+            
+            // 创建临时文本区域进行复制
+            const textArea = document.createElement('textarea');
+            textArea.value = impressionContent;
+            document.body.appendChild(textArea);
+            textArea.select();
+            
+            try {
+                document.execCommand('copy');
+                alert('影像诊断内容已复制到剪贴板！');
+            } catch (err) {
+                console.error('复制失败:', err);
+                alert('复制失败，请手动选择内容复制');
+            }
+            
+            document.body.removeChild(textArea);
         }
     </script>
 </body>
